@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alpha Forum</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- DaisyUI -->
@@ -13,8 +15,47 @@
 </head>
 
 <body>
-  <header>
+  <header class="w-11/12 mx-auto mt-3 md:mt-10">
+    <nav>
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden pl-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a>Home</a></li>
+              <li><a>Edit</a></li>
+              <li><a>Add</a></li>
+              <li><a>Categories</a></li>
+            </ul>
+          </div>
+          <a class="text-2xl md:text-3xl font-black text[#12132D]">Alpha</a>
+        </div>
 
+        <div class="navbar-end">
+          <div class="hidden md:flex gap-[10px] mr-5">
+            <div class="tooltip w-11 h-11 bg-[#12132D08] border border-[#0307121A] p-3 rounded-full" data-tip="Home">
+              <img src="icons/home.svg">
+            </div>
+            <div class="tooltip w-11 h-11 bg-[#12132D08] border border-[#0307121A] p-3 rounded-full" data-tip="Edit">
+              <img src="icons/pen.svg">
+            </div>
+            <div class="tooltip w-11 h-11 bg-[#12132D08] border border-[#0307121A] p-3 rounded-full" data-tip="Add">
+              <img src="icons/add.svg">
+            </div>
+            <div class="tooltip w-11 h-11 bg-[#12132D08] border border-[#0307121A] p-3 rounded-full"
+              data-tip="Categories">
+              <img src="icons/flag.svg">
+            </div>
+          </div>
+          <a class="btn font-bold text-white px-8 rounded-full bg-[#797DFC] hover:bg-[#5e62e4]">Sign In</a>
+        </div>
+      </div>
+    </nav>
   </header>
   <main>
 
