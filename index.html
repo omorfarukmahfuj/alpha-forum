@@ -112,40 +112,50 @@
   <main class="w-11/12 md:w-5/6 mx-auto my-10 md:my-20">
 
     <!-- Let's Discuss Section -->
-    <h2 class="font-black text-[32px] text-[#12132D] text-center mb-2 md:mb-5">Let’s Discuss</h2>
-    <p class="text-sm text-[#12132D99] text-center mb-5 md:mb-10 md:w-2/6 mx-auto">Yes, you can run unit tests and view
-      the results directly within the app. The integrated testing features allow for a streamlined .</p>
+    <section class="mb-10 md:mb-[60px]">
+      <h2 class="font-black text-[32px] text-[#12132D] text-center mb-2 md:mb-5">Let’s Discuss</h2>
+      <p class="text-sm text-[#12132D99] text-center mb-5 md:mb-10 md:w-2/6 mx-auto">Yes, you can run unit tests and
+        view the results directly within the app. The integrated testing features allow for a streamlined .</p>
 
-    <!-- Spinner -->
-    <div id="loading-spinner" class="flex justify-center mb-4 hidden">
-      <span class="loading loading-infinity loading-lg text-[#797DFC]  w-32"></span>
-    </div>
-
-
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
-      <!-- Section Left -->
-      <div id="post-container" class="md:col-span-8 relative">
-
-
+      <!-- Spinner -->
+      <div id="loading-spinner" class="flex justify-center mb-4 hidden">
+        <span class="loading loading-infinity loading-lg text-[#797DFC]  w-32"></span>
       </div>
 
-
-      <!-- Section Right -->
-      <div class="md:col-span-4 bg-[#12132D0D] px-4 pt-4 pb-1 md:px-6 md:pt-6 md:pb-3 rounded-[20px] h-fit">
-
-        <div class="flex justify-between items-center mb-2 md:mb-4">
-          <p class="font-bold text-xl text-[#12132D]">Title</p>
-          <span class="flex gap-2">
-            <img src="icons/tick.svg">
-            <p class="text-base text-[#12132D99] w-full">Mark as read (<span id="total-read">0</span>)</p>
-          </span>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+        <!-- Section Left -->
+        <div id="post-container" class="md:col-span-8 relative">
         </div>
-        <div id="marked-card-container">
 
+        <!-- Section Right -->
+        <div class="md:col-span-4 bg-[#12132D0D] px-4 pt-4 pb-1 md:px-6 md:pt-6 md:pb-3 rounded-[20px] h-fit">
+
+          <div class="flex justify-between items-center mb-2 md:mb-4">
+            <p class="font-bold text-xl text-[#12132D]">Title</p>
+            <span class="flex gap-2">
+              <img src="icons/tick.svg">
+              <p class="text-base text-[#12132D99] w-full">Mark as read (<span id="total-read">0</span>)</p>
+            </span>
+          </div>
+
+          <div id="marked-card-container">
+
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
+    <!-- Join Our Forum Section -->
+    <section class="flex flex-col md:flex-row justify-between items-center bg-[#12132D] rounded-3xl">
+      <div class="p-8 md:p-16">
+        <h2 class="text-center md:text-left font-black text-[32px] text-white mb-2 md:mb-3">Join Our Forum</h2>
+        <p class="text-center md:text-left text-sm text-[#FFFFFFCC] mb-4 md:mb-6 md:w-5/6">Share your favorite opinion and win and wp forum coffee mug!
+          Yes, you can run unit tests and view the results directly within the app. </p>
+        <a class="w-full md:w-fit mx-auto btn font-bold text-base text-white px-8 rounded-full border-none bg-[#797DFC] hover:bg-[#5e62e4]">Registered Now</a>
+      </div>
+
+      <img class="bottom-0 md:pt-12 px-4" src="images/joinforum.png" alt="">
+    </section>
 
 
   </main>
