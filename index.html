@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <header class="w-11/12 md:w-5/6 mx-auto mt-3 md:mt-10">
+  <header class="w-11/12 md:w-5/6 mx-auto my-3 md:my-10">
     <!-- Navbar Started -->
     <nav>
       <div class="navbar bg-base-100">
@@ -72,8 +72,9 @@
           <p class="text-sm md:text-base text-white font-medium text-center md:text-left mb-3 md:mb-6">Share your
             favorite opinion and win and wp forum coffee mug!</p>
           <label class="input flex items-center font-medium text-sm text-[#03071280] py-[14px] pl-4 pr-1 rounded-full">
-            <input type="text" class="grow" placeholder="Search here anything" />
-            <button class="text-base text-white font-bold bg-[#797DFC] rounded-full py-2 px-5">Search</button>
+            <input id="search-field" type="text" class="grow" placeholder="Search here anything" />
+            <button onclick="handleSearch()"
+              class="text-base text-white font-bold bg-[#797DFC] rounded-full py-2 px-5">Search</button>
           </label>
         </div>
 
@@ -104,13 +105,48 @@
           </table>
         </div>
 
-
       </div>
     </div>
   </header>
-  <main>
+
+  <main class="w-11/12 md:w-5/6 mx-auto my-10 md:my-20">
+
+    <!-- Let's Discuss Section -->
+    <h2 class="font-black text-[32px] text-[#12132D] text-center mb-2 md:mb-5">Let’s Discuss</h2>
+    <p class="text-sm text-[#12132D99] text-center mb-5 md:mb-10 md:w-2/6 mx-auto">Yes, you can run unit tests and view
+      the results directly within the app. The integrated testing features allow for a streamlined .</p>
+
+
+
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-5">
+
+      <!-- Section Left -->
+      <div id="post-container" class="md:col-span-8 ">
+
+      </div>
+
+
+      <!-- Section Right -->
+      <div class="md:col-span-4 bg-[#12132D0D] px-4 pt-4 pb-1 md:px-6 md:pt-6 md:pb-3 rounded-[20px] h-fit">
+
+        <div class="flex justify-between items-center mb-2 md:mb-4">
+          <p class="font-bold text-xl text-[#12132D]">Title</p>
+          <span class="flex gap-2">
+            <img src="icons/tick.svg">
+            <p class="text-base text-[#12132D99] w-full">Mark as read (<span id="total-read">0</span>)</p>
+          </span>
+        </div>
+        <div id="marked-card-container">
+
+        </div>
+      </div>
+
+    </div>
+
 
   </main>
+
   <footer>
 
   </footer>
