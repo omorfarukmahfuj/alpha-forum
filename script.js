@@ -62,13 +62,21 @@ const displayPosts = posts => {
       </div>
     </div>
     `;
-    postContainer.appendChild(postCard);
+    toggleLoadingSpinner(true);
+    setTimeout(() => {
+      postContainer.appendChild(postCard);
+    }, 2000);
 
   })
+  // Hide Loading Spinner
+  setTimeout(() => {
+    toggleLoadingSpinner(false);
+  }, 2000);
 }
 
 // Handle Search
 const handleSearch = () => {
+  toggleLoadingSpinner(true);
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
   const query = `?category=${searchText}`;
@@ -93,9 +101,20 @@ const handleMarkButton = (title, view_count) => {
     </div>
 `;
   markedCardContainer.appendChild(markedCard);
-  
-const totalRead = document.getElementById('total-read');
-totalRead.innerText = postCount;
+
+  const totalRead = document.getElementById('total-read');
+  totalRead.innerText = postCount;
+}
+
+// Toggle Loading Spinner 
+
+const toggleLoadingSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById('loading-spinner');
+  if (isLoading) {
+    loadingSpinner.classList.remove("hidden");
+  } else {
+    loadingSpinner.classList.add("hidden");
+  }
 }
 
 
