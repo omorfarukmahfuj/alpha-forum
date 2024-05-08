@@ -5,8 +5,6 @@ const loadPosts = async (query = '') => {
   displayPosts(posts);
 }
 
-
-
 // Display Forum Post
 const displayPosts = posts => {
   const postContainer = document.getElementById('post-container');
@@ -84,7 +82,6 @@ const handleSearch = () => {
 }
 
 let postCount = 0;
-
 // Handle Mark as read Button
 const handleMarkButton = (title, view_count) => {
   postCount++;
@@ -107,7 +104,6 @@ const handleMarkButton = (title, view_count) => {
 }
 
 // Toggle Loading Spinner 
-
 const toggleLoadingSpinner = (isLoading) => {
   const loadingSpinner = document.getElementById('loading-spinner');
   if (isLoading) {
@@ -119,4 +115,44 @@ const toggleLoadingSpinner = (isLoading) => {
 
 
 
+const loadLatestPosts = async () => {
+  const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+  const data = await res.json();
+  displayLatestPosts(data);
+}
+
+// Display Latest Post
+const displayLatestPosts = data => {
+  data.forEach(post => {
+    const latestPostContainer = document.getElementById('lates-post-container');
+    const LatestPostCard = document.createElement('div');
+    LatestPostCard.classList = `flex flex-col md:flex-row gap-5`;
+
+    LatestPostCard.innerHTML = `
+    <!-- Card -->
+    <div class="border border-1 border-[#12132D26] p-4 rounded-[20px]">
+      <img class="rounded-[20px]  mb-4 md:mb-6" src="${post.cover_image}">
+      <div class="flex items-center gap-2 mb-2 md:mb-3">
+        <img src="icons/date.svg" alt="">
+        <p class="text-[#12132D99] text-base">${post.author.posted_date ?? "No Publish Date"}</p>
+      </div>
+      <p class="font-extrabold text-lg text-[#12132D]  mb-2 md:mb-3">${post.title}</p>
+      <p class="text-base text-[#12132D99]  mb-3 md:mb-4">${post.description}</p>
+
+      <div class="flex items-center gap-3">
+        <img class="w-11 h-11 rounded-full" src="${post.profile_image}" alt="">
+        <div>
+          <p class="text-base text-[#12132D] font-bold mb-1">${post.author.name}</p>
+          <p class="text-sm text-[#12132D99]">${post.author.designation ?? "Unknown"}</p>
+        </div>
+      </div>
+    </div>
+    `;
+    latestPostContainer.appendChild(LatestPostCard);
+  })
+}
+
+
+
 loadPosts();
+loadLatestPosts();
